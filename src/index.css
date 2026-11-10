@@ -1,0 +1,200 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/InstrumentSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/InstrumentSans-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/InstrumentSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Mono';
+  src: url('/fonts/DMMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-ink: #15130f;
+  --color-ink-2: #1d1a16;
+  --color-ink-3: #2a2621;
+  --color-bone: #efe9df;
+  --color-bone-2: #e6ddcf;
+  --color-sand: #cdbfa8;
+  --color-stone: #9a8f80;
+  --color-stone-dark: #6b6256;
+  --color-moss: #56603f;
+  --color-clay: #b26a47;
+
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-clay);
+    color: var(--color-bone);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  img {
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  blockquote p {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Rótulo editorial em mono */
+  .eyebrow {
+    @apply font-mono text-[0.75rem] uppercase tracking-[0.18em];
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full px-7 text-[0.95rem] font-bold tracking-[0.01em] transition-[background-color,color,transform,box-shadow] duration-300;
+    transition-timing-function: var(--ease-out-soft);
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn-light {
+    @apply bg-bone text-ink hover:bg-white;
+  }
+  .btn-dark {
+    @apply bg-ink text-bone hover:bg-ink-3;
+  }
+  .btn-ghost-light {
+    @apply text-bone ring-1 ring-bone/35 ring-inset hover:ring-bone;
+  }
+  .btn-ghost-dark {
+    @apply text-ink ring-1 ring-ink/30 ring-inset hover:ring-ink;
+  }
+
+  /* Link com sublinhado animado */
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-out-soft);
+  }
+  .link-line:hover,
+  .link-line:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Textura de grão discreta */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Revelação ao rolar */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 0.9s var(--ease-out-soft),
+    transform 0.9s var(--ease-out-soft);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-img {
+  clip-path: inset(8% 0 8% 0);
+  transition: clip-path 1.2s var(--ease-out-soft);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal-img.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal-img {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+dialog::backdrop {
+  background: rgb(10 9 7 / 0.92);
+  backdrop-filter: blur(6px);
+}
