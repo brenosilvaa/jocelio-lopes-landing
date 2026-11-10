@@ -1,12 +1,25 @@
 import { ano, links, navegacao, pessoa } from '../data/site';
+import { LogoMark } from './Logo';
 
 export function Footer() {
   return (
     <footer className="grain relative pb-28 pt-20 md:pb-12">
       <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-        <p className="font-display text-[clamp(4rem,17vw,15rem)] leading-[0.82] tracking-[-0.03em]">
-          Jocelio <em className="text-sand">Lopes</em>
-        </p>
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="flex items-end gap-5 md:gap-8">
+            <LogoMark className="size-16 shrink-0 md:size-28" />
+            <p className="font-sans text-[clamp(2rem,7.4vw,6.6rem)] font-bold uppercase leading-[0.85] tracking-[0.04em]">
+              Jocelio
+              <br />
+              Lopes
+            </p>
+          </div>
+          <p className="eyebrow max-w-xs text-stone md:pb-2 md:text-right">
+            Barbeiro visagista
+            <br />
+            {pessoa.estabelecimento} · {pessoa.cidade}
+          </p>
+        </div>
 
         <div className="mt-14 grid grid-cols-2 gap-10 border-t border-bone/15 pt-10 md:grid-cols-4">
           <div>

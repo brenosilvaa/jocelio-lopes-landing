@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { links, navegacao, pessoa } from '../data/site';
+import { Logo } from './Logo';
 
 export function Header() {
   const [rolou, setRolou] = useState(false);
@@ -39,8 +40,8 @@ export function Header() {
         Pular para o conteúdo
       </a>
       <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-5 md:h-20 md:px-10">
-        <a href="#topo" className="font-display text-[1.6rem] leading-none tracking-tight" aria-label={`${pessoa.nome} — início`}>
-          Jocelio <span className="italic text-sand">Lopes</span>
+        <a href="#topo" className="text-bone" aria-label={`${pessoa.nome} — início`}>
+          <Logo />
         </a>
 
         <nav aria-label="Principal" className="hidden items-center gap-9 lg:flex">
