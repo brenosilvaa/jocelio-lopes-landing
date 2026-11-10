@@ -8,10 +8,10 @@ export function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="flex items-center gap-5 md:gap-8">
             <LogoSelo className="size-24 shrink-0 md:size-40" corMonograma="var(--color-clay)" />
-            <p className="font-display text-[clamp(3rem,9vw,8.5rem)] leading-[0.88] tracking-[-0.02em]">
+            <p className="font-name text-[clamp(2.4rem,8.4vw,8rem)] uppercase leading-[0.95] tracking-[0.06em]">
               Jocelio
               <br />
-              Lopes
+              <span className="text-sand">Lopes</span>
             </p>
           </div>
           <p className="eyebrow max-w-xs text-stone md:pb-2 md:text-right">

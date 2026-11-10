@@ -36,6 +36,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: 'Italiana';
+  src: url('/fonts/Italiana-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: 'DM Mono';
   src: url('/fonts/DMMono-Regular.woff') format('woff');
   font-weight: 400;
@@ -58,6 +65,7 @@
   --font-display: 'Instrument Serif', 'Times New Roman', serif;
   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
+  --font-name: 'Italiana', 'Instrument Serif', serif;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }

@@ -46,7 +46,7 @@ export function Logo({ className = '' }: { className?: string }) {
     <span className={`inline-flex items-center gap-3 ${className}`}>
       <LogoSelo className="size-11 shrink-0 md:size-12" />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.55rem] leading-none md:text-[1.7rem]">Jocelio Lopes</span>
+        <span className="font-name text-[1.18rem] uppercase leading-none tracking-[0.14em] md:text-[1.3rem]">Jocelio Lopes</span>
         <span className="mt-1.5 font-mono text-[0.58rem] uppercase tracking-[0.26em] text-stone">Barbeiro visagista</span>
       </span>
     </span>

@@ -31,12 +31,12 @@ export function Hero() {
         <div className="relative z-10 -mt-28 flex flex-col md:-mt-40 lg:col-span-8 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:justify-center lg:pb-24 lg:pt-10">
           <p className="eyebrow reveal text-sand">{hero.rotulo}</p>
 
-          <h1 id="hero-titulo" className="mt-5 font-display leading-[0.82] tracking-[-0.02em]">
-            <span className="reveal block text-[clamp(5.2rem,17vw,8rem)] lg:text-[clamp(8rem,14.2vw,14.5rem)]" style={{ ['--delay' as string]: '80ms' }}>
+          <h1 id="hero-titulo" className="mt-6 font-name uppercase leading-[0.92] tracking-[0.06em]">
+            <span className="reveal block text-[clamp(3.4rem,20.5vw,6.5rem)] lg:text-[clamp(6rem,10.6vw,10.25rem)]" style={{ ['--delay' as string]: '80ms' }}>
               {pessoa.primeiroNome}
             </span>
             <span
-              className="reveal block pl-[0.9em] italic text-sand text-[clamp(5.2rem,17vw,8rem)] lg:pl-[1.15em] lg:text-[clamp(8rem,14.2vw,14.5rem)]"
+              className="reveal block text-sand text-[clamp(3.4rem,20.5vw,6.5rem)] lg:text-[clamp(6rem,10.6vw,10.25rem)]"
               style={{ ['--delay' as string]: '160ms' }}
             >
               {pessoa.sobrenome}
