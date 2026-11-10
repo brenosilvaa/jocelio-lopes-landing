@@ -1,14 +1,14 @@
 import { ano, links, navegacao, pessoa } from '../data/site';
-import { LogoMark } from './Logo';
+import { LogoSelo } from './Logo';
 
 export function Footer() {
   return (
     <footer className="grain relative pb-28 pt-20 md:pb-12">
       <div className="mx-auto max-w-[90rem] px-5 md:px-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div className="flex items-end gap-5 md:gap-8">
-            <LogoMark className="size-16 shrink-0 md:size-28" />
-            <p className="font-sans text-[clamp(2rem,7.4vw,6.6rem)] font-bold uppercase leading-[0.85] tracking-[0.04em]">
+          <div className="flex items-center gap-5 md:gap-8">
+            <LogoSelo className="size-24 shrink-0 md:size-40" corMonograma="var(--color-clay)" />
+            <p className="font-display text-[clamp(3rem,9vw,8.5rem)] leading-[0.88] tracking-[-0.02em]">
               Jocelio
               <br />
               Lopes

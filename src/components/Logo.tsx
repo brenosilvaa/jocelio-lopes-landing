@@ -1,31 +1,53 @@
+import { useId } from 'react';
+
 /**
- * Identidade Jocelio Lopes: monograma geométrico "JL" (traços paralelos — o gancho do J
- * e o pé do L, que remete ao acabamento reto da tesoura) + nome em caixa-alta espaçada.
+ * Identidade Jocelio Lopes — "Selo autoral":
+ * monograma JL em serifa itálica dentro de um selo duplo, com o nome em volta.
  */
-export function LogoMark({ className = 'size-8', accent = true }: { className?: string; accent?: boolean }) {
+interface SeloProps {
+  className?: string;
+  /** Cor do monograma (padrão: cor do texto atual). */
+  corMonograma?: string;
+  /** Cor do texto circular (padrão: areia). */
+  corTexto?: string;
+}
+
+export function LogoSelo({ className = 'size-12', corMonograma = 'currentColor', corTexto = 'var(--color-sand)' }: SeloProps) {
+  const id = useId().replace(/:/g, '');
   return (
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden className={className}>
-      <path d="M16.5 5v18.5a6.75 6.75 0 0 1-13.5 0" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
-      <path d="M23.5 5v30" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
-      <path d="M23.5 35H37" stroke={accent ? 'var(--color-clay)' : 'currentColor'} strokeWidth="3" strokeLinecap="square" />
+    <svg viewBox="0 0 100 100" aria-hidden className={className}>
+      <defs>
+        <path id={`selo-${id}`} d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0" />
+      </defs>
+      <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="50" cy="50" r="29" fill="none" stroke="currentColor" strokeWidth="1" />
+      <text fontFamily="'DM Mono', ui-monospace, monospace" fontSize="8" fill={corTexto}>
+        <textPath href={`#selo-${id}`} textLength="236" lengthAdjust="spacing">
+          JOCELIO LOPES · BARBEIRO VISAGISTA ·{' '}
+        </textPath>
+      </text>
+      <text
+        x="50"
+        y="61"
+        textAnchor="middle"
+        fontFamily="'Instrument Serif', serif"
+        fontStyle="italic"
+        fontSize="34"
+        fill={corMonograma}
+      >
+        JL
+      </text>
     </svg>
   );
 }
 
-interface LogoProps {
-  className?: string;
-  /** Mostra a linha "Barbeiro visagista" abaixo do nome. */
-  subtitulo?: boolean;
-}
-
-export function Logo({ className = '', subtitulo = true }: LogoProps) {
+export function Logo({ className = '' }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
-      <LogoMark className="size-8 shrink-0 md:size-9" />
-      <span aria-hidden className="h-8 w-px bg-current opacity-25" />
+      <LogoSelo className="size-11 shrink-0 md:size-12" />
       <span className="flex flex-col leading-none">
-        <span className="font-sans text-[0.82rem] font-bold uppercase tracking-[0.24em]">Jocelio Lopes</span>
-        {subtitulo && <span className="mt-1.5 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-stone">Barbeiro visagista</span>}
+        <span className="font-display text-[1.55rem] leading-none md:text-[1.7rem]">Jocelio Lopes</span>
+        <span className="mt-1.5 font-mono text-[0.58rem] uppercase tracking-[0.26em] text-stone">Barbeiro visagista</span>
       </span>
     </span>
   );
