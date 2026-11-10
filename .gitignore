@@ -4,3 +4,5 @@ dist
 *.log
 .DS_Store
 scripts/raw
+_to_delete
+publicar-log.txt
