@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ArrowRight } from '../components/Arrow';
 import { PageShell } from '../components/PageShell';
-import { opcoesArquetipo, opcoesCabelo, opcoesRosto } from '../data/dossie';
+import { opcoesArquetipo, opcoesCabelo, opcoesRosto, type GrupoOpcoes } from '../data/dossie';
 
 const vazio = { cliente: '', arquetipo: '', rosto: '', cabelo: '', proposta: '' };
 
 const campo =
   'min-h-14 w-full rounded-xl bg-ink-2 px-4 text-[1.02rem] text-bone ring-1 ring-inset ring-bone/20 placeholder:text-stone focus:outline-none focus:ring-clay';
 
-function Select({ rotulo, valor, opcoes, onChange }: { rotulo: string; valor: string; opcoes: string[]; onChange: (v: string) => void }) {
+function Select({ rotulo, valor, opcoes, onChange }: { rotulo: string; valor: string; opcoes: string[] | GrupoOpcoes[]; onChange: (v: string) => void }) {
   return (
     <label className="flex flex-col gap-2">
       <span className="eyebrow text-stone">{rotulo}</span>
@@ -17,11 +17,21 @@ function Select({ rotulo, valor, opcoes, onChange }: { rotulo: string; valor: st
         <option value="" disabled>
           Selecionar
         </option>
-        {opcoes.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
+        {(opcoes as (string | GrupoOpcoes)[]).map((o) =>
+          typeof o === 'string' ? (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ) : (
+            <optgroup key={o.grupo} label={o.grupo}>
+              {o.opcoes.map((op) => (
+                <option key={op.valor} value={op.valor}>
+                  {op.rotulo}
+                </option>
+              ))}
+            </optgroup>
+          ),
+        )}
       </select>
     </label>
   );
