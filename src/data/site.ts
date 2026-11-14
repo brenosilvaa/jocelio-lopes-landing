@@ -266,12 +266,15 @@ export const metodo = {
 };
 
 export const sobre = {
-  rotulo: 'Sobre',
+  rotulo: 'Minha história',
+  /** Texto do próprio Jocelio (enviado em 14/11/2026). */
   titulo: 'Tudo começou com uma decisão, em 2021.',
   paragrafos: [
-    'Quando decidi entrar para a barbearia, talvez ainda não imaginasse o quanto essa escolha transformaria a minha trajetória.',
-    'Comecei aprendendo, observando e desenvolvendo minhas habilidades. Com o tempo, percebi que não queria apenas dominar técnicas de corte: queria compreender melhor as pessoas e o impacto que uma imagem bem construída pode ter na vida de alguém.',
-    'Foi essa busca por conhecimento que me aproximou do visagismo. Passei a entender que cada rosto tem proporções, características e particularidades, e que um bom profissional precisa saber interpretar tudo isso antes de executar qualquer técnica.',
+    'Quando decidi entrar para a barbearia, talvez ainda não imaginasse o quanto essa escolha transformaria minha trajetória.',
+    'Comecei aprendendo, observando e desenvolvendo minhas habilidades. Com o tempo, percebi que não queria apenas dominar técnicas de corte. Queria compreender melhor as pessoas e o impacto que uma imagem bem construída pode ter na vida de alguém.',
+    'Foi essa busca por conhecimento que me aproximou do visagismo e ampliou minha maneira de enxergar a profissão.',
+    'Passei a entender que cada rosto possui proporções, características e particularidades. E que um bom profissional precisa saber interpretar tudo isso antes de executar qualquer técnica.',
+    'Desde então, venho investindo em conhecimento, aperfeiçoamento e novas experiências para oferecer um trabalho cada vez mais consciente e personalizado.',
     'Hoje, atuo como barbeiro visagista na Brutus Barbearia, em Ribeirão Preto, unindo técnica, análise e identidade em cada atendimento.',
   ],
   citacao: 'Minha profissão é a barbearia. Meu compromisso é ajudar pessoas a expressarem sua identidade através da imagem.',
