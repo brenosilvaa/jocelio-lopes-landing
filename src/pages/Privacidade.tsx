@@ -17,12 +17,12 @@ export function Privacidade() {
           <h2 className="pt-2 font-display text-[1.7rem] text-bone">Para que são usados</h2>
           <p>
             Para que o Jocelio possa entrar em contato com você sobre seus serviços, como a consultoria de visagismo e o
-            agendamento de horários. Os dados não são vendidos nem repassados a terceiros.
+            agendamento de horários. Os dados não são vendidos nem repassados a outras pessoas ou empresas.
           </p>
-          <h2 className="pt-2 font-display text-[1.7rem] text-bone">Como são enviados</h2>
+          <h2 className="pt-2 font-display text-[1.7rem] text-bone">Onde ficam guardados</h2>
           <p>
-            O site não guarda seus dados. Ao ver o resultado, o seu WhatsApp abre com uma mensagem pronta para o Jocelio, e o
-            envio só acontece se você tocar em enviar.
+            Ao ver o resultado, seus dados são enviados para uma planilha privada do Jocelio no Google Planilhas, que só ele
+            acessa, e ele recebe um aviso por e-mail. O site em si não guarda nada no seu aparelho.
           </p>
           <h2 className="pt-2 font-display text-[1.7rem] text-bone">Seus direitos</h2>
           <p>

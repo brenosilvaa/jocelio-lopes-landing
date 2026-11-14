@@ -40,6 +40,14 @@ export const links = {
   linktree: 'https://linktr.ee/jocelio.lopes',
 } as const;
 
+export const integracoes = {
+  /**
+   * URL do App da Web do Google Apps Script que grava os resultados do teste na planilha do Jocelio
+   * e manda um e-mail a cada novo lead (ver scripts/apps-script/LEIA-ME.md). Vazio = não envia.
+   */
+  planilhaTeste: '',
+};
+
 export const whatsappConsultoria = `https://wa.me/${links.whatsappNumero}?text=${encodeURIComponent(
   'Olá, Jocelio! Vim pelo seu site e quero saber mais sobre a consultoria de visagismo.',
 )}`;

@@ -2,6 +2,7 @@ import { useMemo, useState, type FormEvent } from 'react';
 import { ArrowRight } from '../components/Arrow';
 import { PageShell } from '../components/PageShell';
 import { links } from '../data/site';
+import { enviarLead } from '../lib/enviarLead';
 import { ordemArquetipos, perguntas, resultados, type Arquetipo } from '../data/teste';
 
 type Etapa = 'inicio' | 'perguntas' | 'dados' | 'resultado';
@@ -58,14 +59,15 @@ export function Teste() {
     e.preventDefault();
     setTentou(true);
     if (!dadosOk) return;
-    const r = resultados[res.principal];
     const pct = (a: Arquetipo) => Math.round((res.pontos[a] / res.total) * 100);
-    const texto =
-      `Olá, Jocelio! Fiz o teste de arquétipo no seu site.\n\n` +
-      `*Nome:* ${nome.trim()}\n*Telefone:* ${telefone}\n*Resultado:* ${r.nome} (${pct(res.principal)}%)\n` +
-      `*Perfil completo:* ${ordemArquetipos.map((a) => `${resultados[a].nome} ${pct(a)}%`).join(' · ')}\n\n` +
-      `Quero saber mais sobre a consultoria de visagismo.`;
-    window.open(`https://wa.me/${links.whatsappNumero}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    enviarLead({
+      nome: nome.trim(),
+      telefone,
+      arquetipo: resultados[res.principal].nome,
+      percentual: pct(res.principal),
+      perfil: res.ranking.map((a) => `${resultados[a].nome} ${pct(a)}%`).join(' · '),
+      respostas: respostas.map((a, i) => `${i + 1}:${a ? resultados[a].nome : '-'}`).join(' '),
+    });
     setEtapa('resultado');
     window.scrollTo({ top: 0 });
   };
@@ -153,7 +155,7 @@ export function Teste() {
               Seu resultado <em className="text-clay">está pronto.</em>
             </h1>
             <p className="mt-5 max-w-xl text-bone/75">
-              Informe seu nome e seu WhatsApp para ver o resultado. Ele também será enviado ao Jocelio, que pode te ajudar a
+              Informe seu nome e seu WhatsApp para ver o resultado. Ele também chega ao Jocelio, que pode te ajudar a
               transformar esse perfil em uma imagem pensada para você.
             </p>
             <form onSubmit={enviar} noValidate className="mt-9 flex max-w-xl flex-col gap-5">
@@ -200,7 +202,7 @@ export function Teste() {
               <button type="submit" className="btn btn-light mt-2 self-start">
                 Ver meu resultado <ArrowRight />
               </button>
-              <p className="text-xs text-stone">Ao continuar, o WhatsApp abre com o seu resultado pronto para enviar ao Jocelio.</p>
+              <p className="text-xs text-stone">O resultado aparece aqui mesmo, na hora.</p>
             </form>
           </section>
         )}
@@ -258,7 +260,17 @@ export function Teste() {
                 <a href={links.agendamentoNovo} target="_blank" rel="noopener noreferrer" className="btn btn-light">
                   Agendar consultoria <ArrowRight />
                 </a>
-                <button type="button" onClick={recomecar} className="btn btn-ghost-light">
+                <a
+                  href={`https://wa.me/${links.whatsappNumero}?text=${encodeURIComponent(
+                    `Olá, Jocelio! Fiz o teste no seu site e meu arquétipo deu ${resultados[res.principal].nome}. Quero saber mais sobre a consultoria de visagismo.`,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost-light"
+                >
+                  Falar no WhatsApp
+                </a>
+                <button type="button" onClick={recomecar} className="link-line self-center text-sm text-bone/70 sm:ml-2">
                   Refazer o teste
                 </button>
               </div>
