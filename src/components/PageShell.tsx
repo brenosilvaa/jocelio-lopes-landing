@@ -8,10 +8,12 @@ interface Props {
   noindex?: boolean;
   /** Mostra a barra superior com o logo (padrão: sim). */
   barra?: boolean;
+  /** Textura de grão no fundo (padrão: sim). */
+  grao?: boolean;
 }
 
 /** Moldura das páginas extras (/links, /teste, /dossie, /privacidade). */
-export function PageShell({ titulo, children, noindex = false, barra = true }: Props) {
+export function PageShell({ titulo, children, noindex = false, barra = true, grao = true }: Props) {
   useEffect(() => {
     document.title = titulo;
     if (noindex) {
@@ -24,7 +26,7 @@ export function PageShell({ titulo, children, noindex = false, barra = true }: P
   }, [titulo, noindex]);
 
   return (
-    <div className="grain min-h-svh">
+    <div className={`min-h-svh ${grao ? 'grain' : ''}`}>
       {barra && (
         <header className="border-b border-bone/10">
           <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-5 md:h-20 md:px-10">
