@@ -15,6 +15,12 @@ for (const w of [640, 996]) {
 }
 await sharp(p(RAW, 'perfil.jpg')).jpeg({ quality: 84, mozjpeg: true }).toFile(p(OUT, 'jocelio-retrato-996.jpg'));
 
+// Retrato da abertura (foto enviada pelo Breno, 1168x1600)
+for (const w of [640, 1168]) {
+  await sharp(p(RAW, 'retrato-abertura.png')).resize({ width: w }).webp({ quality: 82 }).toFile(p(OUT, `jocelio-abertura-${w}.webp`));
+}
+await sharp(p(RAW, 'retrato-abertura.png')).jpeg({ quality: 80, mozjpeg: true }).toFile(p(OUT, 'jocelio-abertura-1168.jpg'));
+
 // Foto completa (Sobre)
 for (const w of [768, 1200]) {
   await sharp(p(RAW, 'DcM_IP8twry.jpg')).resize({ width: w }).webp({ quality: 78 }).toFile(p(OUT, `jocelio-e-pai-${w}.webp`));

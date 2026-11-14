@@ -61,13 +61,13 @@ export const hero = {
   ctaSecundario: 'Ver resultados',
   retrato: {
     webp: [
-      { src: '/images/jocelio-retrato-640.webp', w: 640 },
-      { src: '/images/jocelio-retrato-996.webp', w: 996 },
+      { src: '/images/jocelio-abertura-640.webp', w: 640 },
+      { src: '/images/jocelio-abertura-1168.webp', w: 1168 },
     ],
-    fallback: '/images/jocelio-retrato-996.jpg',
-    largura: 996,
-    altura: 996,
-    alt: 'Retrato em preto e branco de Jocelio Lopes, de camisa branca, com a mão apoiada no rosto.',
+    fallback: '/images/jocelio-abertura-1168.jpg',
+    largura: 1168,
+    altura: 1600,
+    alt: 'Jocelio Lopes, barbeiro visagista, de camisa branca, sentado e com a mão apoiada no rosto.',
   },
 } as const;
 

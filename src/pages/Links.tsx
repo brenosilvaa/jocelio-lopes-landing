@@ -28,7 +28,7 @@ export function Links() {
           <div className="relative">
             <img
               src="/images/jocelio-retrato-640.webp"
-              alt={hero.retrato.alt}
+              alt="Retrato em preto e branco de Jocelio Lopes"
               width={112}
               height={112}
               className="size-28 rounded-full object-cover object-[40%_30%] ring-1 ring-bone/20"

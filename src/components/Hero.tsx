@@ -18,7 +18,7 @@ export function Hero() {
               sizes="(min-width: 1024px) 32vw, 100vw"
               priority
               className="absolute inset-0"
-              imgClassName="h-full w-full object-cover object-[38%_30%]"
+              imgClassName="h-full w-full object-cover object-[50%_18%]"
             />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent lg:from-ink/60 lg:via-transparent" />
             <p className="eyebrow absolute bottom-4 right-5 hidden text-[0.65rem] text-bone/75 md:block lg:bottom-5 lg:right-5">
