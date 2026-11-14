@@ -17,6 +17,7 @@ Custo: zero (Google Planilhas + Apps Script; o e-mail tem limite diário de cerc
    - Quem pode acessar: **Qualquer pessoa**
    Clique em **Implantar** e copie a **URL do App da Web** (termina em `/exec`).
 5. Cole essa URL em `src/data/site.ts`, em `integracoes.planilhaTeste`, e publique o site.
+   (Instalado em 14/11/2026 na conta do Breno: planilha https://docs.google.com/spreadsheets/d/1ezm6mwXsId9iOKlD28BoFIgPJzjYM7tS2G0slR7cgXk/edit)
 6. Compartilhe a planilha com o Jocelio (botão Compartilhar) se ela estiver na sua conta.
 
 ## Alterou o script depois?

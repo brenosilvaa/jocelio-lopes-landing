@@ -41,7 +41,7 @@ function doPost(e) {
         '<p>Arquétipo predominante: <b>' + html(limpar(d.arquetipo, 20)) + '</b> (' + html(String(d.percentual || '')) + '%)<br>' +
         'Perfil completo: ' + html(limpar(d.perfil, 120)) + '</p>' +
         '<p>WhatsApp: <a href="' + wa + '">' + html(telefone) + '</a></p>' +
-        '<p><a href="' + SpreadsheetApp.getActiveSpreadsheet().getUrl() + '">Abrir a planilha de leads</a></p>',
+        '<p><a href="' + obterPlanilha().getUrl() + '">Abrir a planilha de leads</a></p>',
     });
     return resposta({ ok: true });
   } catch (err) {
@@ -51,14 +51,28 @@ function doPost(e) {
   }
 }
 
-/** Rode uma vez pelo editor para criar a aba e autorizar o script. */
+/** Rode uma vez pelo editor: cria a planilha (se preciso), a aba Leads e autoriza o script. */
 function configurar() {
   obterAba();
   MailApp.getRemainingDailyQuota();
+  Logger.log('Planilha: ' + obterPlanilha().getUrl());
+}
+
+// Funciona tanto colado dentro de uma planilha (Extensões → Apps Script) quanto como projeto avulso,
+// que cria a própria planilha na primeira execução e guarda o ID.
+function obterPlanilha() {
+  const ativa = SpreadsheetApp.getActiveSpreadsheet();
+  if (ativa) return ativa;
+  const props = PropertiesService.getScriptProperties();
+  const id = props.getProperty('PLANILHA_ID');
+  if (id) return SpreadsheetApp.openById(id);
+  const nova = SpreadsheetApp.create('Leads — Teste de arquétipo (Jocelio Lopes)');
+  props.setProperty('PLANILHA_ID', nova.getId());
+  return nova;
 }
 
 function obterAba() {
-  const planilha = SpreadsheetApp.getActiveSpreadsheet();
+  const planilha = obterPlanilha();
   let aba = planilha.getSheetByName(ABA);
   if (!aba) {
     aba = planilha.insertSheet(ABA);
@@ -66,6 +80,8 @@ function obterAba() {
     aba.setFrozenRows(1);
     aba.getRange(1, 1, 1, CABECALHO.length).setFontWeight('bold');
     aba.getRange('A:A').setNumberFormat('dd/MM/yyyy HH:mm');
+    const padrao = planilha.getSheetByName('Página1') || planilha.getSheetByName('Sheet1');
+    if (padrao && planilha.getSheets().length > 1) planilha.deleteSheet(padrao);
   }
   return aba;
 }

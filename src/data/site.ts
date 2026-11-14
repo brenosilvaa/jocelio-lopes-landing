@@ -45,7 +45,7 @@ export const integracoes = {
    * URL do App da Web do Google Apps Script que grava os resultados do teste na planilha do Jocelio
    * e manda um e-mail a cada novo lead (ver scripts/apps-script/LEIA-ME.md). Vazio = não envia.
    */
-  planilhaTeste: '',
+  planilhaTeste: 'https://script.google.com/macros/s/AKfycbw2_PycDzhzz7ZAGrLwL2ezvYAHXMZhMp4pIY69XXySG1Pb2dHVZsjbkXmlQfQdVnwT/exec',
 };
 
 export const whatsappConsultoria = `https://wa.me/${links.whatsappNumero}?text=${encodeURIComponent(
