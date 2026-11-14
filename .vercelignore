@@ -3,3 +3,6 @@ _to_delete
 publicar.cmd
 publicar-log.txt
 .local-dist
+preview
+servidor-local.mjs
+testar-local.cmd
