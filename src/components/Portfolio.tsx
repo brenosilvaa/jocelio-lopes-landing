@@ -64,11 +64,11 @@ export function Portfolio() {
   const filtros: Filtro[] = ['Todos', ...categorias];
 
   return (
-    <section id="trabalhos" aria-labelledby="trabalhos-titulo" className="grain relative py-24 md:py-36">
+    <section id="resultados" aria-labelledby="trabalhos-titulo" className="grain relative border-t border-bone/10 bg-ink-2 py-24 md:py-36">
       <div className="mx-auto grid max-w-[90rem] gap-12 px-5 md:px-10 lg:grid-cols-12 lg:gap-6">
         <div className="lg:col-span-3">
           <div className="lg:sticky lg:top-32">
-            <SectionLabel numero="01" texto="Trabalhos" />
+            <SectionLabel numero="04" texto="Resultados" />
             <h2 id="trabalhos-titulo" className="reveal mt-6 font-display text-[2.9rem] leading-[0.95] md:text-[3.6rem]">
               Feito na tesoura, <em className="text-sand">pensado para cada rosto.</em>
             </h2>

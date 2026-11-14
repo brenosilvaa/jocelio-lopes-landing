@@ -45,10 +45,10 @@ export const whatsappConsultoria = `https://wa.me/${links.whatsappNumero}?text=$
 )}`;
 
 export const navegacao = [
-  { id: 'trabalhos', rotulo: 'Trabalhos' },
-  { id: 'visagismo', rotulo: 'Visagismo' },
-  { id: 'metodo', rotulo: 'Método' },
   { id: 'sobre', rotulo: 'Sobre' },
+  { id: 'consultoria', rotulo: 'Consultoria' },
+  { id: 'metodo', rotulo: 'Metodologia' },
+  { id: 'resultados', rotulo: 'Resultados' },
   { id: 'agendar', rotulo: 'Agendar' },
 ] as const;
 
@@ -58,7 +58,7 @@ export const hero = {
   apresentacao:
     'Cortes personalizados construídos a partir da sua rotina, do seu estilo e da imagem que você quer transmitir. Atendimento na tesoura e consultoria de visagismo na Brutus Barbearia.',
   ctaPrincipal: 'Agendar horário',
-  ctaSecundario: 'Ver trabalhos',
+  ctaSecundario: 'Ver resultados',
   retrato: {
     webp: [
       { src: '/images/jocelio-retrato-640.webp', w: 640 },
@@ -70,12 +70,6 @@ export const hero = {
     alt: 'Retrato em preto e branco de Jocelio Lopes, de camisa branca, com a mão apoiada no rosto.',
   },
 } as const;
-
-/** Frase do próprio Jocelio (legenda de 02/07/2026). */
-export const manifesto = {
-  texto: 'Cortes personalizados não seguem tendências — valorizam quem você é.',
-  autor: 'Jocelio Lopes',
-};
 
 export type Categoria = 'Tesoura' | 'Visagismo' | 'Barba';
 
@@ -320,13 +314,6 @@ export const agendamento = {
     'Selecione Jocélio Lopes como profissional e confirme o horário.',
   ],
   cta: 'Agendar horário',
-};
-
-export const instagram = {
-  rotulo: 'Instagram',
-  titulo: 'Mais trabalhos, toda semana.',
-  texto: 'Reels de cortes, bastidores do atendimento e o processo da consultoria.',
-  destaques: ['DYsz8WLulDw', 'Ddr1yscOods', 'DcwgfN9u_5E', 'DaTyMr0ozax', 'DccJ04qOkEV', 'DYniml3OLh4'],
 };
 
 export const seo = {

@@ -56,7 +56,7 @@ export function Hero() {
                 {hero.ctaPrincipal}
                 <ArrowRight />
               </a>
-              <a href="#trabalhos" className="btn btn-ghost-light">
+              <a href="#resultados" className="btn btn-ghost-light">
                 {hero.ctaSecundario}
               </a>
             </div>
@@ -72,7 +72,7 @@ export function Hero() {
           ))}
           <li>{pessoa.local}</li>
           <li className="ml-auto hidden md:block">
-            <a href="#trabalhos" className="link-line">
+            <a href="#sobre" className="link-line">
               Role para ver ↓
             </a>
           </li>

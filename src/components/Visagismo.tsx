@@ -8,9 +8,9 @@ const foto = trabalhos.find((t) => t.id === 'Ddr1yscOods')!;
 export function Visagismo() {
   const { acaso, consultoria } = visagismo.comparacao;
   return (
-    <section id="visagismo" aria-labelledby="visagismo-titulo" className="grain relative bg-bone py-24 text-ink md:py-36">
+    <section id="consultoria" aria-labelledby="visagismo-titulo" className="grain relative bg-bone py-24 text-ink md:py-36">
       <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-        <SectionLabel numero="02" texto={visagismo.rotulo} tom="escuro" />
+        <SectionLabel numero="02" texto="Consultoria / Teste" tom="escuro" />
 
         <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-6">
           <h2 id="visagismo-titulo" className="reveal font-display text-[3rem] leading-[0.95] tracking-[-0.015em] md:text-[5.2rem] lg:col-span-8">
