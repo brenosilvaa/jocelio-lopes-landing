@@ -23,7 +23,11 @@ export const pessoa = {
 export const links = {
   /** Agenda online (BarberCode) — destino de todos os botões de agendamento. */
   agendamento: 'https://app.barbercode.com.br/client/brutus-barbearia-rp',
-  instagram: 'https://www.instagram.com/joceliolopes/',
+  /** Link direto para "Novo agendamento" (usado na página /links). */
+  agendamentoNovo: 'https://app.barbercode.com.br/client/brutus-barbearia-rp/new',
+  /** Endereço do site — trocar quando o domínio próprio estiver no ar. */
+  site: 'https://jocelio-lopes.vercel.app',
+  instagram: 'https://www.instagram.com/joceliolopes',
   instagramHandle: '@joceliolopes',
   tiktok: 'https://www.tiktok.com/@jocelilopess',
   tiktokHandle: '@jocelilopess',

@@ -19,6 +19,23 @@ export function Visagismo() {
           <p className="reveal self-end text-[1.1rem] text-ink/75 lg:col-span-4">{visagismo.definicao}</p>
         </div>
 
+        {/* Teste de arquétipo */}
+        <a
+          href="/teste"
+          className="reveal group mt-14 flex flex-col gap-5 rounded-2xl bg-ink p-7 text-bone transition-colors hover:bg-ink-3 md:mt-20 md:flex-row md:items-center md:justify-between md:p-10"
+        >
+          <div>
+            <p className="eyebrow text-sand">Teste gratuito · 2 minutos</p>
+            <p className="mt-3 font-display text-[2rem] leading-[1.05] md:text-[2.6rem]">
+              Qual arquétipo a sua <em className="text-clay">imagem</em> comunica?
+            </p>
+            <p className="mt-2 max-w-xl text-bone/70">Responda 12 perguntas e descubra seu perfil: Rei, Guerreiro, Mago ou Amante.</p>
+          </div>
+          <span className="btn btn-light shrink-0 self-start md:self-auto">
+            Fazer o teste <ArrowRight />
+          </span>
+        </a>
+
         <div className="mt-16 grid gap-10 md:mt-24 lg:grid-cols-12 lg:gap-6">
           {/* Comparação */}
           <div className="grid gap-px overflow-hidden rounded-sm bg-ink/15 md:grid-cols-2 lg:col-span-8">
