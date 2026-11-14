@@ -6,3 +6,4 @@ dist
 scripts/raw
 _to_delete
 publicar-log.txt
+.local-dist
