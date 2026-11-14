@@ -315,7 +315,7 @@ export const agendamento = {
     'A agenda é online, pelo BarberCode da Brutus Barbearia. Você escolhe o serviço, o profissional e o horário disponível — sem precisar ligar.',
   passos: [
     'Toque em “Agendar horário” e depois em “Novo agendamento”.',
-    'Escolha “Consultoria visagista” ou um serviço em “Atendimento: Uilian, Dionatan e Jocelio”.',
+    'Escolha “Consultoria visagista” ou o serviço que deseja.',
     'Selecione Jocélio Lopes como profissional e confirme o horário.',
   ],
   cta: 'Agendar horário',
