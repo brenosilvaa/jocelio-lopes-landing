@@ -16,7 +16,10 @@ export function Visagismo() {
           <h2 id="visagismo-titulo" className="reveal font-display text-[3rem] leading-[0.95] tracking-[-0.015em] md:text-[5.2rem] lg:col-span-8">
             {visagismo.titulo[0]} <em className="text-moss">{visagismo.titulo[1]}</em>
           </h2>
-          <p className="reveal self-end text-[1.1rem] text-ink/75 lg:col-span-4">{visagismo.definicao}</p>
+          <div className="reveal self-end lg:col-span-4">
+            <p className="font-display text-[1.45rem] leading-snug text-ink">{visagismo.pergunta}</p>
+            <p className="mt-3 text-[1.05rem] text-ink/75">{visagismo.definicao}</p>
+          </div>
         </div>
 
         {/* Teste de arquétipo */}
@@ -29,7 +32,7 @@ export function Visagismo() {
             <p className="mt-3 font-display text-[2rem] leading-[1.05] md:text-[2.6rem]">
               Qual arquétipo a sua <em className="text-clay">imagem</em> comunica?
             </p>
-            <p className="mt-2 max-w-xl text-bone/70">Responda 12 perguntas e descubra seu perfil: Rei, Guerreiro, Mago ou Amante.</p>
+            <p className="mt-2 max-w-xl text-bone/70">{visagismo.frase} Responda 12 perguntas e descubra seu perfil: Rei, Guerreiro, Mago ou Amante.</p>
           </div>
           <span className="btn btn-light shrink-0 self-start md:self-auto">
             Fazer o teste <ArrowRight />

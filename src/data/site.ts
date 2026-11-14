@@ -56,9 +56,9 @@ export const hero = {
   rotulo: 'Barbeiro visagista — Ribeirão Preto',
   frase: ['Antes da tesoura,', 'quem você é.'],
   apresentacao:
-    'Cortes personalizados construídos a partir da sua rotina, do seu estilo e da imagem que você quer transmitir. Atendimento na tesoura e consultoria de visagismo na Brutus Barbearia.',
+    'Cada rosto tem características. Cada pessoa tem uma identidade. Meu trabalho é compreender esses elementos para construir uma imagem que represente você.',
   ctaPrincipal: 'Agendar horário',
-  ctaSecundario: 'Ver resultados',
+  ctaSecundario: 'Conheça meu trabalho',
   retrato: {
     webp: [
       { src: '/images/jocelio-abertura-640.webp', w: 640 },
@@ -197,9 +197,10 @@ export const trabalhos: Trabalho[] = [
 export const visagismo = {
   rotulo: 'Consultoria de visagismo',
   titulo: ['Seu rosto já diz muito.', 'O corte deveria concordar.'],
-  /** Descrição usada pelo próprio Jocelio no serviço da agenda BarberCode. */
+  pergunta: 'Você sabe se o corte que usa hoje realmente valoriza suas características faciais?',
   definicao:
-    'Visagismo é a técnica que cria uma imagem personalizada a partir dos traços do rosto, do estilo de vida e da personalidade de cada pessoa. O objetivo é harmonizar cabelo e barba para valorizar a sua identidade e transmitir, de forma intencional, a imagem que você deseja passar.',
+    'Na consultoria, analiso características faciais, linhas, proporções, perfil comportamental e identidade para desenvolver uma proposta de imagem alinhada àquilo que você deseja comunicar.',
+  frase: 'Não se trata apenas de como você quer se ver, mas de como deseja ser percebido.',
   comparacao: {
     acaso: {
       titulo: 'Corte escolhido ao acaso',
@@ -234,9 +235,9 @@ export interface Etapa {
 
 /** Método descrito pelo Jocelio em publicação de 24/09/2026: “Entender. Conscientizar. Aplicar.” */
 export const metodo = {
-  rotulo: 'Metodologia',
+  rotulo: 'Método Jocelio Lopes',
   titulo: 'Entender. Conscientizar. Aplicar.',
-  abertura: 'Tudo começa no detalhe: um café, uma boa conversa e um atendimento pensado em você.',
+  abertura: 'A arquitetura da imagem masculina. Tudo começa no detalhe: um café, uma boa conversa e um atendimento pensado em você.',
   fonte: { texto: 'Nas palavras do Jocelio — publicação de 24/09/2026', url: 'https://www.instagram.com/joceliolopes/reel/Ddr1yscOods/' },
   etapas: [
     {
@@ -266,13 +267,14 @@ export const metodo = {
 
 export const sobre = {
   rotulo: 'Sobre',
-  titulo: 'Construir resultados, não só fazer cortes.',
+  titulo: 'Tudo começou com uma decisão, em 2021.',
   paragrafos: [
-    'Jocelio Lopes é barbeiro visagista e atende na Brutus Barbearia, em Ribeirão Preto. Seu trabalho é na tesoura: cada atendimento parte de uma conversa para entender a pessoa antes de definir o corte.',
-    'Em 2024, passou dois dias aprendendo com o visagista Ronan Mendes. Da experiência, ficou uma convicção que hoje guia cada atendimento: o resultado é consequência de um trabalho personalizado.',
+    'Quando decidi entrar para a barbearia, talvez ainda não imaginasse o quanto essa escolha transformaria a minha trajetória.',
+    'Comecei aprendendo, observando e desenvolvendo minhas habilidades. Com o tempo, percebi que não queria apenas dominar técnicas de corte: queria compreender melhor as pessoas e o impacto que uma imagem bem construída pode ter na vida de alguém.',
+    'Foi essa busca por conhecimento que me aproximou do visagismo. Passei a entender que cada rosto tem proporções, características e particularidades, e que um bom profissional precisa saber interpretar tudo isso antes de executar qualquer técnica.',
+    'Hoje, atuo como barbeiro visagista na Brutus Barbearia, em Ribeirão Preto, unindo técnica, análise e identidade em cada atendimento.',
   ],
-  citacao:
-    'O visagismo não é só uma consultoria, não é só um corte de cabelo. É elevar a imagem de outra pessoa, fazer ela se reconectar e enxergar o potencial que ela tem.',
+  citacao: 'Minha profissão é a barbearia. Meu compromisso é ajudar pessoas a expressarem sua identidade através da imagem.',
   foto: {
     webp: [
       { src: '/images/jocelio-e-pai-768.webp', w: 768 },
@@ -305,7 +307,7 @@ export const servicos = [
 
 export const agendamento = {
   rotulo: 'Agendamento',
-  titulo: ['Seu horário', 'está a um toque.'],
+  titulo: ['Sua próxima transformação', 'começa aqui.'],
   texto:
     'A agenda é online, pelo BarberCode da Brutus Barbearia. Você escolhe o serviço, o profissional e o horário disponível — sem precisar ligar.',
   passos: [

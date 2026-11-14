@@ -15,6 +15,7 @@ export function Footer() {
             </p>
           </div>
           <p className="eyebrow max-w-xs text-stone md:pb-2 md:text-right">
+            <span className="mb-3 block font-display text-[1.5rem] normal-case tracking-normal text-sand">Sua imagem merece intenção.</span>
             Barbeiro visagista
             <br />
             {pessoa.estabelecimento} · {pessoa.cidade}

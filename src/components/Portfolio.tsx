@@ -73,7 +73,7 @@ export function Portfolio() {
               Feito na tesoura, <em className="text-sand">pensado para cada rosto.</em>
             </h2>
             <p className="reveal mt-6 max-w-sm text-bone/70">
-              Uma seleção de atendimentos publicados pelo Jocelio. Toque em uma foto para ampliar e ler o que ele escreveu sobre o trabalho.
+              Cada transformação tem uma intenção. Conheça alguns resultados construídos a partir de técnica, análise e personalidade. Toque em uma foto para ampliar.
             </p>
 
             <div role="group" aria-label="Filtrar trabalhos" className="reveal mt-8 flex flex-wrap gap-2">

@@ -37,7 +37,7 @@ export function Sobre() {
 
           <blockquote className="reveal mt-12 border-l-2 border-clay pl-6">
             <p className="font-display text-[1.65rem] leading-[1.15] md:text-[2rem]">“{sobre.citacao}”</p>
-            <footer className="eyebrow mt-4 text-stone">— Jocelio, sobre o visagismo</footer>
+            <footer className="eyebrow mt-4 text-stone">— Jocelio Lopes</footer>
           </blockquote>
 
           <dl className="reveal mt-12 grid grid-cols-2 gap-6 border-t border-bone/15 pt-6">
