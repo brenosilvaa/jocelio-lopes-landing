@@ -5,7 +5,7 @@
  */
 
 // E-mail que recebe o aviso de cada novo lead. Vazio = o e-mail da conta dona do script.
-const EMAIL_AVISO = '';
+const EMAIL_AVISO = 'joceliolopes21@outlook.com';
 const ABA = 'Leads';
 const CABECALHO = ['Data', 'Nome', 'WhatsApp', 'Arquétipo', '%', 'Perfil completo', 'Respostas', 'Origem', 'Status'];
 
