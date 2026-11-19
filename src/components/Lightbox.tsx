@@ -74,12 +74,13 @@ export function Lightbox({ itens, indice, onFechar, onMudar }: Props) {
 
           <div className="shrink-0 border-t border-bone/10 bg-ink px-5 pb-6 pt-5 md:w-[24rem] md:border-0 md:bg-transparent md:p-0">
             <p className="eyebrow text-stone">
-              {String(indice + 1).padStart(2, '0')} / {String(itens.length).padStart(2, '0')} · {t.data}
+              {String(indice + 1).padStart(2, '0')} / {String(itens.length).padStart(2, '0')}
+              {t.data ? ` · ${t.data}` : ''}
             </p>
             <h3 id="lightbox-titulo" className="mt-2 font-display text-[2rem] leading-[1.05] md:mt-4 md:text-[2.75rem]">
               {t.titulo}
             </h3>
-            <p className="mt-3 text-[0.98rem] text-bone/75 md:mt-5">“{t.legenda}”</p>
+            {t.legenda && <p className="mt-3 text-[0.98rem] text-bone/75 md:mt-5">“{t.legenda}”</p>}
             <p className="eyebrow mt-3 text-[0.65rem] text-stone">{t.categorias.join(' · ')}</p>
             <div className="mt-5 flex items-center gap-2 md:mt-8">
               <button
@@ -98,9 +99,11 @@ export function Lightbox({ itens, indice, onFechar, onMudar }: Props) {
               >
                 <ArrowRight />
               </button>
-              <a href={t.post} target="_blank" rel="noopener noreferrer" className="eyebrow link-line ml-auto inline-flex items-center gap-2 pb-1 text-sand">
-                Ver no Instagram <ArrowUpRight className="size-3.5" />
-              </a>
+              {t.post && (
+                <a href={t.post} target="_blank" rel="noopener noreferrer" className="eyebrow link-line ml-auto inline-flex items-center gap-2 pb-1 text-sand">
+                  Ver no Instagram <ArrowUpRight className="size-3.5" />
+                </a>
+              )}
             </div>
           </div>
 

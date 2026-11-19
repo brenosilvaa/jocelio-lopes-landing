@@ -84,14 +84,22 @@ export type Categoria = 'Tesoura' | 'Visagismo' | 'Barba';
 export interface Trabalho {
   id: string;
   titulo: string;
-  /** Trecho da legenda publicada pelo próprio Jocelio no Instagram. */
-  legenda: string;
+  /** Trecho da legenda publicada pelo próprio Jocelio no Instagram (só para itens vindos de posts). */
+  legenda?: string;
   categorias: Categoria[];
-  data: string;
-  post: string;
+  data?: string;
+  post?: string;
   imagem: { webp: string; jpg: string; largura: number; altura: number };
   alt: string;
 }
+
+/** Fotos enviadas diretamente pelo Jocelio (sem post no Instagram), em 720×1280. */
+const foto = (n: string) => ({
+  webp: `/images/trabalhos/jl-${n}.webp`,
+  jpg: `/images/trabalhos/jl-${n}.jpg`,
+  largura: 720,
+  altura: 1280,
+});
 
 const img = (codigo: string) => ({
   webp: `/images/trabalhos/${codigo}.webp`,
@@ -104,6 +112,13 @@ export const categorias: Categoria[] = ['Tesoura', 'Visagismo', 'Barba'];
 
 export const trabalhos: Trabalho[] = [
   {
+    id: 'jl-6715',
+    titulo: 'Leitura frontal',
+    categorias: ['Visagismo', 'Barba'],
+    imagem: foto('6715'),
+    alt: 'Cliente de frente, de capa, com cabelo curto penteado e barba cheia desenhada.',
+  },
+  {
     id: 'DYniml3OLh4',
     titulo: 'Transformação planejada',
     legenda:
@@ -113,6 +128,13 @@ export const trabalhos: Trabalho[] = [
     post: 'https://www.instagram.com/joceliolopes/reel/DYniml3OLh4/',
     imagem: img('DYniml3OLh4'),
     alt: 'Cliente de perfil com cabelo ondulado curto e barba desenhada.',
+  },
+  {
+    id: 'jl-8637',
+    titulo: 'Ondas em camadas',
+    categorias: ['Tesoura'],
+    imagem: foto('8637'),
+    alt: 'Cliente de perfil com cabelo ondulado médio cortado em camadas.',
   },
   {
     id: 'DcwgfN9u_5E',
@@ -126,6 +148,13 @@ export const trabalhos: Trabalho[] = [
     alt: 'Cliente de óculos com cabelo penteado para trás e barba cheia, de perfil.',
   },
   {
+    id: 'jl-0123',
+    titulo: 'Grisalho com intenção',
+    categorias: ['Tesoura', 'Barba'],
+    imagem: foto('0123'),
+    alt: 'Cliente grisalho com cabelo médio penteado para trás e barba desenhada, olhando para o lado.',
+  },
+  {
     id: 'DccJ04qOkEV',
     titulo: 'Entender antes de cortar',
     legenda:
@@ -135,6 +164,13 @@ export const trabalhos: Trabalho[] = [
     post: 'https://www.instagram.com/joceliolopes/reel/DccJ04qOkEV/',
     imagem: img('DccJ04qOkEV'),
     alt: 'Jocelio corta o cabelo de um cliente na tesoura, segurando pente e mecha.',
+  },
+  {
+    id: 'jl-6666',
+    titulo: 'Textura no perfil',
+    categorias: ['Tesoura'],
+    imagem: foto('6666'),
+    alt: 'Cliente de perfil com cabelo texturizado penteado para trás e barba curta.',
   },
   {
     id: 'Ddr1yscOods',
@@ -148,6 +184,13 @@ export const trabalhos: Trabalho[] = [
     alt: 'Cliente de terno azul-marinho e gravata clara, cabelo curto e barba rente, diante de folhagens.',
   },
   {
+    id: 'jl-6667',
+    titulo: 'Acabamento da nuca',
+    categorias: ['Tesoura'],
+    imagem: foto('6667'),
+    alt: 'O mesmo corte visto de trás, com camadas e nuca natural.',
+  },
+  {
     id: 'DaTyMr0ozax',
     titulo: 'Movimento natural',
     legenda: 'Cortes personalizados não seguem tendências — valorizam quem você é.',
@@ -156,6 +199,13 @@ export const trabalhos: Trabalho[] = [
     post: 'https://www.instagram.com/joceliolopes/reel/DaTyMr0ozax/',
     imagem: img('DaTyMr0ozax'),
     alt: 'Cabelo longo ondulado, cortado em camadas, visto de perfil.',
+  },
+  {
+    id: 'jl-8658',
+    titulo: 'Liso para trás',
+    categorias: ['Tesoura'],
+    imagem: foto('8658'),
+    alt: 'Cliente de perfil com cabelo escuro liso penteado para trás, laterais rentes à orelha.',
   },
   {
     id: 'DZ1CMyfNrYn',
@@ -169,6 +219,13 @@ export const trabalhos: Trabalho[] = [
     alt: 'Cliente jovem de perfil com cabelo médio penteado para trás, regata preta.',
   },
   {
+    id: 'jl-6719',
+    titulo: 'Proporção e simetria',
+    categorias: ['Visagismo', 'Barba'],
+    imagem: foto('6719'),
+    alt: 'Cliente de frente, de camisa escura, com cabelo curto penteado para trás e barba curta.',
+  },
+  {
     id: 'DYsz8WLulDw',
     titulo: 'Não é apenas um corte',
     legenda:
@@ -180,6 +237,13 @@ export const trabalhos: Trabalho[] = [
     alt: 'Cliente com cabelo penteado para o lado e barba curta, olhando para o lado.',
   },
   {
+    id: 'jl-6513',
+    titulo: 'Volume e caimento',
+    categorias: ['Tesoura'],
+    imagem: foto('6513'),
+    alt: 'Cliente jovem de perfil com cabelo médio liso, volume no topo e laterais cobrindo a orelha.',
+  },
+  {
     id: 'DYFKnkQO69N',
     titulo: 'Finalização',
     legenda: 'Excelência e qualidade em cada detalhe.',
@@ -188,6 +252,13 @@ export const trabalhos: Trabalho[] = [
     post: 'https://www.instagram.com/joceliolopes/reel/DYFKnkQO69N/',
     imagem: img('DYFKnkQO69N'),
     alt: 'Mão do barbeiro ajusta o volume do cabelo de um cliente de barba, visto de perfil.',
+  },
+  {
+    id: 'jl-9387',
+    titulo: 'Corte infantil na tesoura',
+    categorias: ['Tesoura'],
+    imagem: foto('9387'),
+    alt: 'Criança de perfil com cabelo texturizado e franja levemente para trás.',
   },
   {
     id: 'DVHczXxETIN',
