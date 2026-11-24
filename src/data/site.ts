@@ -298,6 +298,11 @@ export const visagismo = {
       ],
     },
   },
+  /** Fotos entre o título e o teste (ids de `trabalhos`). */
+  fotos: [
+    { id: 'jl-6715', legenda: 'Leitura frontal: linhas, proporções e simetria do rosto vêm antes da tesoura.' },
+    { id: 'jl-6719', legenda: 'O resultado acompanha os traços de quem está na cadeira, não a tendência do momento.' },
+  ],
   duracao: '2h30',
   notaAgenda: 'Na agenda, escolha “Consultoria visagista com Jocélio Lopez”.',
   ctaContato: 'Conversar sobre a consultoria',
@@ -310,6 +315,8 @@ export interface Etapa {
   texto: string;
   /** `true` quando a etapa foi descrita pelo próprio Jocelio. */
   confirmado: boolean;
+  /** Id de um item de `trabalhos` mostrado junto da etapa. */
+  foto?: string;
 }
 
 /** Método descrito pelo Jocelio em publicação de 24/09/2026: “Entender. Conscientizar. Aplicar.” */
@@ -325,12 +332,14 @@ export const metodo = {
       texto:
         'Antes de pensar no corte, procuro entender quem está na minha frente: sua rotina, seu estilo, suas necessidades e o que você realmente busca.',
       confirmado: true,
+      foto: 'DVHczXxETIN',
     },
     {
       numero: '02',
       nome: 'Conscientizar',
       texto: 'A partir disso, mostro como o cabelo pode funcionar melhor no seu dia a dia.',
       confirmado: true,
+      foto: 'DccJ04qOkEV',
     },
     {
       numero: '03',
@@ -338,6 +347,7 @@ export const metodo = {
       texto:
         'Ensino, de forma simples, como reproduzir o resultado em casa — inclusive a maneira correta de pentear.',
       confirmado: true,
+      foto: 'DYFKnkQO69N',
     },
   ] satisfies Etapa[],
   fechamento:
@@ -358,6 +368,18 @@ export const sobre = {
   ],
   citacao: 'Minha profissão é a barbearia. Meu compromisso é ajudar pessoas a expressarem sua identidade através da imagem.',
   foto: {
+    webp: [
+      { src: '/images/jocelio-certificados-768.webp', w: 768 },
+      { src: '/images/jocelio-certificados-1200.webp', w: 1200 },
+    ],
+    fallback: '/images/jocelio-certificados-1200.jpg',
+    largura: 1200,
+    altura: 1276,
+    alt: 'Jocelio Lopes de boné e camisa xadrez escura, braços cruzados segurando uma tesoura, diante de uma parede de tijolos pretos com certificados emoldurados.',
+    legenda: 'A parede de certificados da formação: workshops e cursos que fazem parte do aperfeiçoamento contínuo.',
+  },
+  /** Segunda foto, dentro do texto da história. */
+  fotoPai: {
     webp: [
       { src: '/images/jocelio-e-pai-768.webp', w: 768 },
       { src: '/images/jocelio-e-pai-1200.webp', w: 1200 },
@@ -398,6 +420,17 @@ export const agendamento = {
     'Selecione Jocélio Lopes como profissional e confirme o horário.',
   ],
   cta: 'Agendar horário',
+  foto: {
+    webp: [
+      { src: '/images/jocelio-retrato-640.webp', w: 640 },
+      { src: '/images/jocelio-retrato-996.webp', w: 996 },
+    ],
+    fallback: '/images/jocelio-retrato-996.jpg',
+    largura: 996,
+    altura: 996,
+    alt: 'Retrato em preto e branco de Jocelio Lopes, de camisa clara, com a mão apoiada no rosto.',
+    legenda: 'Atendimento com hora marcada na Brutus Barbearia, em Ribeirão Preto.',
+  },
 };
 
 export const seo = {

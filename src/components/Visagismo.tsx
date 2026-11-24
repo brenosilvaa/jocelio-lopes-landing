@@ -4,6 +4,7 @@ import { Picture } from './Picture';
 import { SectionLabel } from './SectionLabel';
 
 const foto = trabalhos.find((t) => t.id === 'Ddr1yscOods')!;
+const fotosTexto = visagismo.fotos.map((f) => ({ ...f, t: trabalhos.find((t) => t.id === f.id)! }));
 
 export function Visagismo() {
   const { acaso, consultoria } = visagismo.comparacao;
@@ -20,6 +21,30 @@ export function Visagismo() {
             <p className="font-display text-[1.45rem] leading-snug text-ink">{visagismo.pergunta}</p>
             <p className="mt-3 text-[1.05rem] text-ink/75">{visagismo.definicao}</p>
           </div>
+        </div>
+
+        {/* Fotos entre os textos */}
+        <div className="mt-14 grid grid-cols-2 gap-x-4 md:mt-20 md:gap-x-8 lg:grid-cols-12 lg:gap-x-6">
+          {fotosTexto.map(({ t, legenda }, i) => (
+            <figure
+              key={t.id}
+              className={i === 0 ? 'lg:col-span-4 lg:col-start-2' : 'mt-16 lg:col-span-3 lg:col-start-7 lg:mt-28'}
+            >
+              <div className="reveal-img overflow-hidden">
+                <Picture
+                  webp={t.imagem.webp}
+                  fallback={t.imagem.jpg}
+                  alt={t.alt}
+                  width={t.imagem.largura}
+                  height={t.imagem.altura}
+                  sizes="(min-width: 1024px) 30vw, 50vw"
+                  className="block"
+                  imgClassName="aspect-[4/5] h-auto w-full object-cover object-[50%_30%]"
+                />
+              </div>
+              <figcaption className="reveal mt-4 max-w-sm font-display text-[1.05rem] italic leading-snug text-ink/70 md:text-[1.2rem]">{legenda}</figcaption>
+            </figure>
+          ))}
         </div>
 
         {/* Teste de arquétipo */}

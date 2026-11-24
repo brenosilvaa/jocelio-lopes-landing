@@ -27,6 +27,12 @@ for (const w of [768, 1200]) {
 }
 await sharp(p(RAW, 'DcM_IP8twry.jpg')).resize({ width: 1200 }).jpeg({ quality: 78, mozjpeg: true }).toFile(p(OUT, 'jocelio-e-pai-1200.jpg'));
 
+// Foto principal do Sobre (parede de certificados, enviada pelo Breno em 24/11/2026, 1440x1531)
+for (const w of [768, 1200]) {
+  await sharp(p(RAW, 'certificados.png')).resize({ width: w }).webp({ quality: 80 }).toFile(p(OUT, `jocelio-certificados-${w}.webp`));
+}
+await sharp(p(RAW, 'certificados.png')).resize({ width: 1200 }).jpeg({ quality: 80, mozjpeg: true }).toFile(p(OUT, 'jocelio-certificados-1200.jpg'));
+
 // Trabalhos (capas originais 360x640 — sem ampliação artificial)
 const works = ['DYniml3OLh4', 'DcwgfN9u_5E', 'Ddr1yscOods', 'DaTyMr0ozax', 'DZ1CMyfNrYn', 'DYsz8WLulDw', 'DccJ04qOkEV', 'DYFKnkQO69N', 'DVHczXxETIN'];
 for (const c of works) {

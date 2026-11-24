@@ -1,5 +1,6 @@
 import { agendamento, links, servicos, whatsappConsultoria } from '../data/site';
 import { ArrowRight, ArrowUpRight } from './Arrow';
+import { Picture } from './Picture';
 import { SectionLabel } from './SectionLabel';
 
 export function Agendamento() {
@@ -33,6 +34,22 @@ export function Agendamento() {
                 </li>
               ))}
             </ol>
+
+            <figure className="mt-12 max-w-md">
+              <div className="reveal-img overflow-hidden">
+                <Picture
+                  webp={agendamento.foto.webp}
+                  fallback={agendamento.foto.fallback}
+                  alt={agendamento.foto.alt}
+                  width={agendamento.foto.largura}
+                  height={agendamento.foto.altura}
+                  sizes="(min-width: 1024px) 28rem, 100vw"
+                  className="block"
+                  imgClassName="aspect-[4/5] h-auto w-full object-cover object-[50%_30%]"
+                />
+              </div>
+              <figcaption className="reveal mt-4 font-display text-[1.1rem] italic leading-snug text-bone/70">{agendamento.foto.legenda}</figcaption>
+            </figure>
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7">

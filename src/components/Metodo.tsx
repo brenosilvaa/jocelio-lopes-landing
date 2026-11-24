@@ -1,5 +1,6 @@
-import { links, metodo } from '../data/site';
+import { links, metodo, trabalhos } from '../data/site';
 import { ArrowRight, ArrowUpRight } from './Arrow';
+import { Picture } from './Picture';
 import { SectionLabel } from './SectionLabel';
 
 export function Metodo() {
@@ -33,6 +34,23 @@ export function Metodo() {
               <span aria-hidden className="absolute left-0 top-1 size-[0.65rem] rounded-full bg-clay ring-4 ring-ink md:top-0" />
               <p className="font-mono text-sm text-stone">{e.numero}</p>
               <h3 className="mt-2 font-display text-[2.6rem] leading-none md:text-[3.2rem]">{e.nome}</h3>
+              {(() => {
+                const t = e.foto ? trabalhos.find((x) => x.id === e.foto) : undefined;
+                return t ? (
+                  <div className="mt-6 max-w-[15rem] overflow-hidden md:max-w-[18rem]">
+                    <Picture
+                      webp={t.imagem.webp}
+                      fallback={t.imagem.jpg}
+                      alt={t.alt}
+                      width={t.imagem.largura}
+                      height={t.imagem.altura}
+                      sizes="(min-width: 768px) 288px, 240px"
+                      className="block"
+                      imgClassName="aspect-[4/5] h-auto w-full object-cover"
+                    />
+                  </div>
+                ) : null;
+              })()}
               <p className="mt-5 max-w-sm text-bone/75">{e.texto}</p>
             </li>
           ))}

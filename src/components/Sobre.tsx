@@ -6,7 +6,7 @@ export function Sobre() {
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="grain relative border-t border-bone/10 bg-ink-2 py-24 text-bone md:py-36">
       <div className="mx-auto grid max-w-[90rem] gap-14 px-5 md:px-10 lg:grid-cols-12 lg:gap-6">
-        <figure className="lg:col-span-5">
+        <figure className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
           <div className="reveal-img overflow-hidden">
             <Picture
               webp={sobre.foto.webp}
@@ -16,7 +16,7 @@ export function Sobre() {
               height={sobre.foto.altura}
               sizes="(min-width: 1024px) 38vw, 100vw"
               className="block"
-              imgClassName="aspect-[4/5] h-auto w-full object-cover object-top"
+              imgClassName="aspect-[4/5] h-auto w-full object-cover object-[50%_25%]"
             />
           </div>
           <figcaption className="reveal mt-4 max-w-md font-display text-[1.15rem] italic leading-snug text-bone/70">{sobre.foto.legenda}</figcaption>
@@ -34,6 +34,23 @@ export function Sobre() {
               </p>
             ))}
           </div>
+
+          {/* Foto dentro do texto: o primeiro corte do pai */}
+          <figure className="mt-12 grid grid-cols-[7.5rem_1fr] items-end gap-5 sm:grid-cols-[10rem_1fr] md:gap-7">
+            <div className="reveal-img overflow-hidden">
+              <Picture
+                webp={sobre.fotoPai.webp}
+                fallback={sobre.fotoPai.fallback}
+                alt={sobre.fotoPai.alt}
+                width={sobre.fotoPai.largura}
+                height={sobre.fotoPai.altura}
+                sizes="160px"
+                className="block"
+                imgClassName="aspect-[3/4] h-auto w-full object-cover object-top"
+              />
+            </div>
+            <figcaption className="reveal font-display text-[1.1rem] italic leading-snug text-bone/70 md:text-[1.2rem]">{sobre.fotoPai.legenda}</figcaption>
+          </figure>
 
           <blockquote className="reveal mt-12 border-l-2 border-clay pl-6">
             <p className="font-display text-[1.65rem] leading-[1.15] md:text-[2rem]">“{sobre.citacao}”</p>
