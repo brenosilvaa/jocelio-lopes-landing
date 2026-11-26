@@ -34,7 +34,7 @@ for (const w of [768, 1200]) {
 await sharp(p(RAW, 'certificados.png')).resize({ width: 1200 }).jpeg({ quality: 80, mozjpeg: true }).toFile(p(OUT, 'jocelio-certificados-1200.jpg'));
 
 // Trabalhos (capas originais 360x640 — sem ampliação artificial)
-const works = ['DYniml3OLh4', 'DcwgfN9u_5E', 'Ddr1yscOods', 'DaTyMr0ozax', 'DZ1CMyfNrYn', 'DYsz8WLulDw', 'DccJ04qOkEV', 'DYFKnkQO69N', 'DVHczXxETIN'];
+const works = ['DYniml3OLh4', 'DcwgfN9u_5E', 'Ddr1yscOods', 'DZ1CMyfNrYn', 'DYsz8WLulDw', 'DccJ04qOkEV', 'DYFKnkQO69N', 'DVHczXxETIN'];
 for (const c of works) {
   await sharp(p(RAW, `${c}.jpg`)).resize({ width: 360, height: 640, fit: 'cover' }).webp({ quality: 86 }).toFile(p(OUT, `trabalhos/${c}.webp`));
   await sharp(p(RAW, `${c}.jpg`)).resize({ width: 360, height: 640, fit: 'cover' }).jpeg({ quality: 86, mozjpeg: true }).toFile(p(OUT, `trabalhos/${c}.jpg`));

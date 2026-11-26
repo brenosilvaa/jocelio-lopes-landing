@@ -112,13 +112,6 @@ export const categorias: Categoria[] = ['Tesoura', 'Visagismo', 'Barba'];
 
 export const trabalhos: Trabalho[] = [
   {
-    id: 'jl-6715',
-    titulo: 'Leitura frontal',
-    categorias: ['Visagismo', 'Barba'],
-    imagem: foto('6715'),
-    alt: 'Cliente de frente, de capa, com cabelo curto penteado e barba cheia desenhada.',
-  },
-  {
     id: 'DYniml3OLh4',
     titulo: 'Transformação planejada',
     legenda:
@@ -189,16 +182,6 @@ export const trabalhos: Trabalho[] = [
     categorias: ['Tesoura'],
     imagem: foto('6667'),
     alt: 'O mesmo corte visto de trás, com camadas e nuca natural.',
-  },
-  {
-    id: 'DaTyMr0ozax',
-    titulo: 'Movimento natural',
-    legenda: 'Cortes personalizados não seguem tendências — valorizam quem você é.',
-    categorias: ['Tesoura'],
-    data: '02 jul 2026',
-    post: 'https://www.instagram.com/joceliolopes/reel/DaTyMr0ozax/',
-    imagem: img('DaTyMr0ozax'),
-    alt: 'Cabelo longo ondulado, cortado em camadas, visto de perfil.',
   },
   {
     id: 'jl-8658',
@@ -300,8 +283,8 @@ export const visagismo = {
   },
   /** Fotos entre o título e o teste (ids de `trabalhos`). */
   fotos: [
-    { id: 'jl-6715', legenda: 'Leitura frontal: linhas, proporções e simetria do rosto vêm antes da tesoura.' },
-    { id: 'jl-6719', legenda: 'O resultado acompanha os traços de quem está na cadeira, não a tendência do momento.' },
+    { id: 'jl-6719', legenda: 'Leitura frontal: linhas, proporções e simetria do rosto vêm antes da tesoura.' },
+    { id: 'jl-0123', legenda: 'O resultado acompanha os traços de quem está na cadeira, não a tendência do momento.' },
   ],
   duracao: '2h30',
   notaAgenda: 'Na agenda, escolha “Consultoria visagista com Jocélio Lopez”.',
