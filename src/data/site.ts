@@ -359,7 +359,6 @@ export const sobre = {
     largura: 1200,
     altura: 1276,
     alt: 'Jocelio Lopes de boné e camisa xadrez escura, braços cruzados segurando uma tesoura, diante de uma parede de tijolos pretos com certificados emoldurados.',
-    legenda: 'A parede de certificados da formação: workshops e cursos que fazem parte do aperfeiçoamento contínuo.',
   },
   /** Segunda foto, dentro do texto da história. */
   fotoPai: {

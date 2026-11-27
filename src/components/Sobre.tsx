@@ -19,7 +19,6 @@ export function Sobre() {
               imgClassName="aspect-[4/5] h-auto w-full object-cover object-[50%_25%]"
             />
           </div>
-          <figcaption className="reveal mt-4 max-w-md font-display text-[1.15rem] italic leading-snug text-bone/70">{sobre.foto.legenda}</figcaption>
         </figure>
 
         <div className="lg:col-span-6 lg:col-start-7 lg:pt-10">
